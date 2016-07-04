@@ -18,7 +18,7 @@
 <div class="login-box">
     <div class="login-logo">
         <a href="/">
-            <img src="{{ url('img/logo.png') }}" alt=""/>
+            <img src="{{ url('img/logo_dark.png') }}" width="100%" alt=""/>
         </a>
     </div>
     <!-- /.login-logo -->

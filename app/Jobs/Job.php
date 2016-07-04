@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace FriendZone\Jobs;
 
 use Illuminate\Bus\Queueable;
 

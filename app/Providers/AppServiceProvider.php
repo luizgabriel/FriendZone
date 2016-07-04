@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace FriendZone\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

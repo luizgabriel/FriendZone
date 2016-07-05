@@ -2,9 +2,13 @@
     <!-- Logo -->
     <a href="../../index2.html" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
+        <span class="logo-mini">
+            <img src="{{ url('img/logo_mini.png') }}" height="30px"  alt="">
+        </span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Admin</b>LTE</span>
+        <span class="logo-lg">
+            <img src="{{ url('img/logo.png') }}" height="30px" alt="">
+        </span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -32,7 +36,7 @@
                                 <li><!-- start message -->
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                            <img src="{{ url('img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
                                         </div>
                                         <h4>
                                             Support Team
@@ -103,30 +107,29 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                        <img src="{{ url('img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
                         <span class="hidden-xs">Alexander Pierce</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="{{ url('img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
 
                             <p>
-                                Alexander Pierce - Web Developer
-                                <small>Member since Nov. 2012</small>
+                                {{ Auth::user()->name }}
                             </p>
                         </li>
                         <!-- Menu Body -->
                         <li class="user-body">
                             <div class="row">
                                 <div class="col-xs-4 text-center">
-                                    <a href="#">Followers</a>
+                                    <a href="#"><b>0</b><br/> Seguidores</a>
                                 </div>
                                 <div class="col-xs-4 text-center">
-                                    <a href="#">Sales</a>
+                                    <a href="#"><b>0</b><br/> Vendas</a>
                                 </div>
                                 <div class="col-xs-4 text-center">
-                                    <a href="#">Friends</a>
+                                    <a href="#"><b>0</b><br/> Amigos</a>
                                 </div>
                             </div>
                             <!-- /.row -->
@@ -134,17 +137,13 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                <a href="#" class="btn btn-default btn-flat">Perfil</a>
                             </div>
                             <div class="pull-right">
-                                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                <a href="#" class="btn btn-default btn-flat">Sair</a>
                             </div>
                         </li>
                     </ul>
-                </li>
-                <!-- Control Sidebar Toggle Button -->
-                <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
                 </li>
             </ul>
         </div>

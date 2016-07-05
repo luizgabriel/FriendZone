@@ -8,4 +8,10 @@ $router->group(['middleware' => 'guest'], function () use ($router) {
 
 });
 
-$router->controller('/auth', 'Auth\AuthController');
+$router->group(['middleware' => 'auth'], function () use ($router) {
+
+    $router->resource('posts', 'PostsController');
+
+});
+
+$router->controller('auth', 'Auth\AuthController');

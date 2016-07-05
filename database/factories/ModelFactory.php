@@ -19,3 +19,9 @@ $factory->define(FriendZone\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(FriendZone\Post::class, function (Faker\Generator $faker) {
+    return [
+        'content' => $faker->text(255),
+    ];
+});

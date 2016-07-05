@@ -20,6 +20,7 @@ elixir(function(mix) {
         .copy(packages.ionicons + 'fonts', 'public/fonts')
         .copy(packages.ionicons + 'css/ionicons.min.css', 'public/css/ionicons.min.css')
         .copy(packages.icheck + 'icheck.min.js', 'public/js/icheck.min.js')
+        .copy(packages.icheck + 'skins/flat/blue.css', 'public/css/icheck.css')
 
         .scripts('app.js', 'public/js/app.js')
         .less('AdminLTE.less', 'public/css/app.css')

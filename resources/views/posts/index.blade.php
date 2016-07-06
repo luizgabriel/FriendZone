@@ -11,7 +11,7 @@
             <form class="form-horizontal">
               <div class="box-body">
                 <div class="col-md-2">
-                     <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" width="100%">
+                     <img src="{{ url('img/user3-128x128.jpg') }}" class="img-circle" alt="User Image" width="100%">
                 </div>
 
 <div class="col-md-10">

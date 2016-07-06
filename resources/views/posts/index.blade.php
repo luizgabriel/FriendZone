@@ -5,33 +5,31 @@
 @section('content')
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-           <div class="box box-info">
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form class="form-horizontal">
-              <div class="box-body">
-                <div class="col-md-2">
-                     <img src="{{ url('img/user3-128x128.jpg') }}" class="img-circle" alt="User Image" width="100%">
-                </div>
+            <div class="box box-info">
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="box-body">
+                        <div class="col-md-2">
+                            <img src="{{ url('img/user3-128x128.jpg') }}" class="img-circle" alt="User Image"
+                                 width="100%"/>
+                        </div>
 
-<div class="col-md-10">
-                <div class="form-group">
-                  <label>Área de Texto</label>
-                  <textarea class="form-control" rows="3" placeholder="O que você está pensando?"></textarea>
-                </div>
-</div>
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <label>Área de Texto</label>
+                                <textarea class="form-control" rows="3"
+                                          placeholder="O que você está pensando?"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-info pull-right">Postar</button>
+                    </div>
+                    <!-- /.box-footer -->
+                </form>
             </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                
-                <button type="submit" class="btn btn-info pull-right">Postar</button>
-              </div>
-              <!-- /.box-footer -->
-            </form>
-          </div>
-            </form>
-          </div>
-            
         </div>
     </div>
     <div class="row">

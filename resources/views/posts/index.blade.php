@@ -3,7 +3,34 @@
 @section('title', 'Minhas Postagens')
 
 @section('content')
-
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Nova postagem</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal">
+              <div class="box-body">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Área de Texto</label>
+                        <textarea class="form-control" rows="3" placeholder="O que você está pensando?"></textarea>
+                    </div>
+                </div>
+            </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                
+                <button type="submit" class="btn btn-info pull-right">Postar</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
+            
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             @foreach ($posts as $post)

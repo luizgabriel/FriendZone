@@ -16,3 +16,10 @@ $router->group(['middleware' => 'auth'], function () use ($router) {
 
 });
 
+$router->group(['middleware' => 'guest'], function () use ($router) {
+
+    $router->get('register', 'Auth\AuthController@getRegister');
+    $router->post('/auth/register', 'Auth\AuthController@postRegister');
+
+});
+

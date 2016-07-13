@@ -25,6 +25,10 @@
 
     </div>
     <!-- /.login-box-body -->
+
+    <div class="text-center" style="margin-top: 20px">
+      @yield('extra')
+    </div>
 </div>
 <!-- /.login-box -->
 

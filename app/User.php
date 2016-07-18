@@ -3,6 +3,8 @@
 namespace FriendZone;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use FriendZone\Post;
+use FriendZone\Comment;
 
 class User extends Authenticatable
 {
@@ -23,4 +25,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

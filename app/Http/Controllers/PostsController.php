@@ -21,6 +21,11 @@ class PostsController extends Controller
         $post->user_id = $request->user()->id;
         $post->save();
 
-        return redirect()->to('/posts');
+        return redirect()->route('posts.index');
+    }
+
+    public function show(Post $post)
+    {
+        return view('posts.show', compact('post'));
     }
 }

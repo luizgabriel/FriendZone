@@ -15,6 +15,11 @@
 
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
+          <li>
+              <a href="{{ route('posts.index') }}">
+                  <i class="fa fa-sticky-note"></i> <span>Hall de Postagens</span></i>
+              </a>
+          </li>
             <li>
                 <a href="#">
                     <i class="fa fa-group"></i> <span>Amigos</span></i>

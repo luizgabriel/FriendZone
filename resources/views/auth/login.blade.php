@@ -36,7 +36,7 @@
     </form>
 
     <a href="#">Esqueci minha senha</a><br>
-    <a href="/signup" class="text-center">Quero me cadastrar</a>
+    <a href="/register" class="text-center">Quero me cadastrar</a>
 
 @endsection
 

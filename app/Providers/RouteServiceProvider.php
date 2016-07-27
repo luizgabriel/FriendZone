@@ -2,6 +2,7 @@
 
 namespace FriendZone\Providers;
 
+use FriendZone\User;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use FriendZone\Post;

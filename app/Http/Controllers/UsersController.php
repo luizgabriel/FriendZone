@@ -2,6 +2,7 @@
 
 namespace FriendZone\Http\Controllers;
 
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Request;
 
 use FriendZone\Http\Requests;
@@ -9,22 +10,20 @@ use FriendZone\User;
 
 class UsersController extends Controller
 {
-	public function index()
+	public function profile(Authenticatable $user)
 	{
-
+        return $this->show($user);
 	}
 
-	public function show($id)
+	public function show(User $user)
     {
-        if (is_null($id))
-        {
-            $id = $user->id;
-        }
-        return view('users.profile', ['user' => User::findOrFail($id)]);
+        return view('users.profile', compact('user'));
     }
 
-    public function updateProfile($id)
+    public function updateProfile(Request $request, Authenticatable $user)
     {
+        $user->update($request->only(['name']));
 
+        return redirect()->to('profile');
     }
 }

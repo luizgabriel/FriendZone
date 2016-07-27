@@ -17,7 +17,8 @@ $router->group(['middleware' => 'auth'], function () use ($router) {
     $router->get('auth/logout', 'Auth\AuthController@logout');
     $router->resource('comments', 'CommentsController', ['only' => ['store','destroy']]);  //'destroy','update'
 
-    $router->get('profile/{users}', 'UserController@show');
-    $router->put('profile/update', 'UserController@updateProfile');
+    $router->get('profile', 'UsersController@profile');
+    $router->get('profile/{users}', 'UsersController@show');
+    $router->put('profile/update', 'UsersController@updateProfile');
 
 });

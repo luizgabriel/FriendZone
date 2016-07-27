@@ -15,20 +15,7 @@ class CommentsController extends Controller
         $comment->user_id = $request->user()->id;
         $comment->save();
 
-        return redirect()->route('posts.show', $comment->post_id);
-    }
-
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        return view('comments.item', compact('comment'));
     }
 
     /**

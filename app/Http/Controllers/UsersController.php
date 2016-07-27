@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use FriendZone\Http\Requests;
 use FriendZone\User;
 
-class UserController extends Controller
+class UsersController extends Controller
 {
 	public function index()
 	{
@@ -25,6 +25,6 @@ class UserController extends Controller
 
     public function updateProfile($id)
     {
-    	
+
     }
 }

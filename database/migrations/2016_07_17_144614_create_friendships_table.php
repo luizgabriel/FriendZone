@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFriendshipTable extends Migration
+class CreateFriendshipsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,14 @@ class CreateFriendshipTable extends Migration
      */
     public function up()
     {
-        Schema::create('profiles', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        Schema::create('friendships', function (Blueprint $table) {
 
-            $table->integer('friend_id')->unsigned();
+            $table->integer('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('friend_id')->unsigned()->index();
             $table->foreign('friend_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->index(['user_id', 'friend']);
+            $table->primary(['user_id', 'friend_id']);
         });
     }
 

@@ -10,10 +10,16 @@ CommentsController.addStoreEvents = function (form)
     event.preventDefault();
 
     var input = form.find('[name=content]');
-    var onComplete = function (comment_view) {
-      var comment = $(comment_view);
+    var onComplete = function (commentView) {
+      var comment = $(commentView);
+      var commentsCounter = form.closest('.box').find('.comments-count');
+      var commentsTotal = form.closest('.box').find('.comments-total');
       var commentsBox = form.closest('.box').find('.box-comments');
+
       commentsBox.append(comment);
+      commentsCounter.html(parseInt(commentsCounter.html()) + 1);
+      commentsTotal.html(parseInt(commentsTotal.html()) + 1);
+
       CommentsController.addDestroyEvents(comment);
       input.val('');
     }

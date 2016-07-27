@@ -36,7 +36,7 @@
     </form>
 
     <a href="#">Esqueci minha senha</a><br>
-    <a href="{{ url('register') }}" class="text-center">Quero me cadastrar</a>
+    <a href="/auth/register" class="text-center">Quero me cadastrar</a>
 
 @endsection
 

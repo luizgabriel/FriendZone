@@ -23,6 +23,7 @@ elixir(function(mix) {
         .copy(packages.icheck + 'skins/flat/blue.css', 'public/css/icheck.css')
 
         .scripts('app.js', 'public/js/app.js')
+        .scripts('posts/destroy.js', 'public/js/posts/destroy.js')
         .less('AdminLTE.less', 'public/css/app.css')
 
 });

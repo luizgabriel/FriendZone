@@ -25,7 +25,7 @@
     <!-- /.box-body -->
     @if($post->comments()->count() > 0)
     <div class="box-footer box-comments">
-        @include('comments.index')
+        @include('comments.index', ['comments' => $post->comments()->get() ])
     </div>
     @endif
     <!-- /.box-footer -->

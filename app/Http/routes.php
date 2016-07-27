@@ -21,5 +21,3 @@ $router->group(['middleware' => 'auth'], function () use ($router) {
     $router->put('profile/update', 'UserController@updateProfile');
 
 });
-
->>>>>>> 593fc7684b1cce94561d03d0f5b966f55308f0c5

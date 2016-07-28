@@ -6,7 +6,7 @@ $router->group(['middleware' => 'guest'], function () use ($router) {
 
     $router->get('/', 'Auth\AuthController@getLogin');
     $router->post('/auth/login', 'Auth\AuthController@postLogin');
-    $router->get('register', 'Auth\AuthController@getRegister');
+    $router->get('/auth/register', 'Auth\AuthController@getRegister');
     $router->post('/auth/register', 'Auth\AuthController@postRegister');
 
 });

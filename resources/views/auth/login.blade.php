@@ -21,11 +21,9 @@
         </div>
         <div class="row">
             <div class="col-xs-8">
-                <div class="checkbox icheck">
-                    <label>
-                        <input type="checkbox" class="icheck"> Lembrar de mim
-                    </label>
-                </div>
+                <label>
+                    <input type="checkbox" class="icheck"/> Lembrar de mim
+                </label>
             </div>
             <!-- /.col -->
             <div class="col-xs-4">

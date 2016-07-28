@@ -25,3 +25,9 @@ $factory->define(FriendZone\Post::class, function (Faker\Generator $faker) {
         'content' => $faker->text(255),
     ];
 });
+
+$factory->define(FriendZone\Comment::class, function (Faker\Generator $faker) {
+    return [
+        'content' => $faker->text(100),
+    ];
+});

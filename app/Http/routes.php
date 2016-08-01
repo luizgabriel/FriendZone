@@ -13,7 +13,7 @@ $router->group(['middleware' => 'guest'], function () use ($router) {
 
 $router->group(['middleware' => 'auth'], function () use ($router) {
 
-    $router->resource('posts', 'PostsController', ['only' => ['index', 'store', 'show']]);//'update'
+    $router->resource('posts', 'PostsController', ['only' => ['index', 'store', 'show','destroy']]);//'update'
     $router->get('auth/logout', 'Auth\AuthController@logout');
     $router->resource('comments', 'CommentsController', ['only' => ['store','destroy']]);  //'destroy','update'
 

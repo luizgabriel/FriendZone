@@ -1,7 +1,7 @@
 <div class="box box-widget">
     <div class="box-header with-border">
         <div class="user-block">
-            <img class="img-circle" src="{{ url('img/user3-128x128.jpg') }}" alt="User Image">
+            <img class="img-circle" src="{{ url('img/user3-128x4128.jpg') }}" alt="User Image">
             <span class="username"><a href="#">{{ $post->user->name }}</a></span>
             <span class="description">{{ $post->created_at->diffForHumans() }}</span>
         </div>
@@ -11,9 +11,12 @@
                 class="fa fa-minus"></i>
             </button>
             @if($post->user_id == Auth::user()->id)
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i
-                        class="fa fa-times"></i>
-            </button>
+            <form action="{{ route('posts.destroy', $post->id) }}" class="pull-right" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-box-tool"><i
+                            class="fa fa-times"></i>
+                </button>
+            </form>
             @endif
         </div>
         <!-- /.box-tools -->

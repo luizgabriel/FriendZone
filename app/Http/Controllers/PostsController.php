@@ -28,4 +28,10 @@ class PostsController extends Controller
     {
         return view('posts.show', compact('post'));
     }
+
+    public function destroy(Post $post)
+    {
+        Post::destroy($post->id);
+        return redirect()->route('posts.index');
+    }
 }

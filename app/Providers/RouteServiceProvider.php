@@ -2,6 +2,7 @@
 
 namespace FriendZone\Providers;
 
+use FriendZone\User;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use FriendZone\Post;
@@ -26,6 +27,7 @@ class RouteServiceProvider extends ServiceProvider
     public function boot(Router $router)
     {
         $router->model('posts', Post::class);
+        $router->model('users', User::class);
 
         parent::boot($router);
     }

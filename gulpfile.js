@@ -6,6 +6,7 @@ var packages = {
     font_awesome: 'node_modules/font-awesome/',
     ionicons: 'node_modules/ionicons/dist/',
     icheck: 'node_modules/icheck/',
+    bootstrap3dialog: 'node_modules/bootstrap3-dialog/dist/',
 };
 
 elixir(function(mix) {
@@ -21,9 +22,10 @@ elixir(function(mix) {
         .copy(packages.ionicons + 'css/ionicons.min.css', 'public/css/ionicons.min.css')
         .copy(packages.icheck + 'icheck.min.js', 'public/js/icheck.min.js')
         .copy(packages.icheck + 'skins/flat/blue.css', 'public/css/icheck.css')
+        .copy(packages.bootstrap3dialog + 'css/bootstrap-dialog.min.css', 'public/css/bootstrap-dialog.min.css')
+        .copy(packages.bootstrap3dialog + 'js/bootstrap-dialog.min.js', 'public/js/bootstrap-dialog.min.js')
 
         .scripts('app.js', 'public/js/app.js')
-        .scripts('posts/destroy.js', 'public/js/posts/destroy.js')
         .less('AdminLTE.less', 'public/css/app.css')
 
 });

@@ -1,4 +1,6 @@
-<div class="box box-widget">
+<div class="box box-widget"
+     data-post-id="{{ $post->id }}"
+     data-current-page="0">
     <div class="box-header with-border">
         <div class="user-block">
             <img class="img-circle" src="{{ url('img/user3-128x4128.jpg') }}" alt="User Image">
@@ -26,14 +28,22 @@
         <p>{{ $post->content }}</p>
     </div>
     <!-- /.box-body -->
-    @if($post->comments()->count() > 0)
+
     <div class="box-footer box-comments">
-        @include('comments.index', ['comments' => $post->comments()->get() ])
+        @include('comments.index', ['comments' => $post->comments->take(2)])
+    </div>
+
+    @if($post->comments->count() > 2)
+    <div class="box-footer">
+        <a href="#" class="show-more-comments-btn">Ver mais comentários</a>
+        <div class="pull-right">
+          <span class="comments-count">2</span> de <span class="comments-total">{{ $post->comments->count() }}</span>
+        </div>
     </div>
     @endif
-    <!-- /.box-footer -->
+
     <div class="box-footer">
       @include('comments.create')
     </div>
-    <!-- /.box-footer -->
+
 </div>

@@ -21,11 +21,9 @@
         </div>
         <div class="row">
             <div class="col-xs-8">
-                <div class="checkbox icheck">
-                    <label>
-                        <input type="checkbox" class="icheck"> Lembrar de mim
-                    </label>
-                </div>
+                <label>
+                    <input type="checkbox" class="icheck"/> Lembrar de mim
+                </label>
             </div>
             <!-- /.col -->
             <div class="col-xs-4">
@@ -36,7 +34,7 @@
     </form>
 
     <a href="#">Esqueci minha senha</a><br>
-    <a href="{{ url('register') }}" class="text-center">Quero me cadastrar</a>
+    <a href="/auth/register" class="text-center">Quero me cadastrar</a>
 
 @endsection
 

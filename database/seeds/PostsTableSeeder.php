@@ -11,7 +11,16 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = \FriendZone\User::findOrFail(1);
-        factory(\FriendZone\Post::class)->times(10)->create(['user_id' => $user->id]);
+        for ($i = 0; $i < 10; $i++) {
+            $user = factory(\FriendZone\User::class)->create();
+            factory(\FriendZone\Post::class)->create(['user_id' => $user->id]);
+        }
+
+        foreach (\FriendZone\Post::all() as $post) {
+            for ($j = 0; $j < random_int(0, 8); $j++) {
+                $commenter = \FriendZone\User::inRandomOrder()->first();
+                factory(\FriendZone\Comment::class)->create(['post_id' => $post->id, 'user_id' => $commenter->id]);
+            }
+        }
     }
 }

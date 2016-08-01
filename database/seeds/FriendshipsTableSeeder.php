@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use FriendZone\User;
 
 class FriendshipsTableSeeder extends Seeder
 {
@@ -12,10 +13,9 @@ class FriendshipsTableSeeder extends Seeder
     public function run()
     {
         foreach(\FriendZone\User::all() as $user) {
-
         	foreach (\FriendZone\User::all() as $friend) {
                 if ($user->id != $friend->id && random_int(0,1) == 1) {
-                	DB::table('friendships')->insert(['user_id' => $user->id, 'friend_id' => $friend->id]);
+                	$user->friends()->attach($friend->id);
                 }
             }
         }

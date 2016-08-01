@@ -19,7 +19,7 @@ $router->group(['middleware' => 'auth'], function () use ($router) {
     $router->resource('posts.comments', 'CommentsController', ['only' => ['index']]);
 
     $router->get('profile', 'UsersController@profile');
-    $router->get('profile/{users}', 'UsersController@show');
-    $router->put('profile/update', 'UsersController@updateProfile');
+    $router->get('profile/{users}', ['as' => 'users.show', 'uses' => 'UsersController@show']);
+    $router->put('profile/update', ['as' => 'users.update', 'uses' => 'UsersController@updateProfile']);
 
 });

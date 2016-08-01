@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-4">
     <!-- Profile Image -->
     <div class="box box-primary">
       <div class="box-body box-profile">
@@ -11,31 +11,41 @@
         <p class="text-muted text-center">Golf Player</p>
         <ul class="list-group list-group-unbordered">
           <li class="list-group-item">
-            <b>Friends</b> <a class="pull-right">8,001</a>
+            <b>Friends</b> <a class="pull-right"> {{ $user->friends()->count() }}</a>
           </li>
         </ul>
         <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
       </div>
       <!-- /.box-body -->
-      <div class="box box-primary">
-        <h3 class="title text-center">Amigos</h3>
+    </div>
+
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Amigos</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body no-padding">
         <ul class="users-list clearfix">
           @foreach($user->friends as $friend)
             <li>
-              <img src="{{ url('img/user1-128x128.jpg') }}" alt="Friend profile picture">
-              <a class="users-list-name" href="profile/{{$friend->id}}">{{$friend->name}}</a>
+              <img src="{{ url('img/user1-128x128.jpg') }}" alt="User Image">
+              <a class="users-list-name" href="{{ route('users.show', $friend->id) }}">{{ $friend->name }}</a>
+              <span class="users-list-date">{{ $friend->pivot->created_at->diffForHumans() }}</span>
             </li>
           @endforeach
         </ul>
+        <!-- /.users-list -->
       </div>
+      <!-- /.box-body -->
+      <div class="box-footer text-center">
+        <a href="/friends" class="uppercase">Ver todos os amigos</a>
+      </div>
+      <!-- /.box-footer -->
     </div>
 
-    <div class="box-body no-padding">
-      <!-- /.users-list -->
-    </div>
   </div>
 
-  <div class="col-md-9">
+  <div class="col-md-8">
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="false">Postagens</a></li>

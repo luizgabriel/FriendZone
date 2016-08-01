@@ -12,7 +12,7 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
         for ($i = 0; $i < 10; $i++) {
-            $user = factory(\FriendZone\User::class)->create();
+            $user = \FriendZone\User::inRandomOrder()->first();
             factory(\FriendZone\Post::class)->create(['user_id' => $user->id]);
         }
 

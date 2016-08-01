@@ -17,6 +17,21 @@
         <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
       </div>
       <!-- /.box-body -->
+      <div class="box box-primary">
+        <h3 class="title text-center">Amigos</h3>
+        <ul class="users-list clearfix">
+          @foreach($user->friends as $friend)
+            <li>
+              <img src="{{ url('img/user1-128x128.jpg') }}" alt="Friend profile picture">
+              <a class="users-list-name" href="profile/{{$friend->id}}">{{$friend->name}}</a>
+            </li>
+          @endforeach
+        </ul>
+      </div>
+    </div>
+
+    <div class="box-body no-padding">
+      <!-- /.users-list -->
     </div>
   </div>
 
@@ -25,7 +40,7 @@
             <ul class="nav nav-tabs">
               <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="false">Postagens</a></li>
               @if (Auth::user()->id == $user->id)
-              <li><a href="#settings" data-toggle="tab" aria-expanded="true">Perfil</a></li>
+                <li><a href="#settings" data-toggle="tab" aria-expanded="true">Perfil</a></li>
               @endif
             </ul>
             <div class="tab-content">

@@ -26,7 +26,7 @@
       <!-- /.box-header -->
       <div class="box-body no-padding">
         <ul class="users-list clearfix">
-          @foreach($user->friends as $friend)
+          @foreach($user->friends()->take(8)->get() as $friend)
             <li>
               <img src="{{ url('img/user1-128x128.jpg') }}" alt="User Image">
               <a class="users-list-name" href="{{ route('users.show', $friend->id) }}">{{ $friend->name }}</a>

@@ -4,7 +4,7 @@
     <div class="box-header with-border">
         <div class="user-block">
             <img class="img-circle" src="{{ url('img/user3-128x4128.jpg') }}" alt="User Image">
-            <span class="username"><a href="#">{{ $post->user->name }}</a></span>
+            <span class="username"><a href="/profile/{{$post->user->id}}">{{ $post->user->name }}</a></span>
             <span class="description">{{ $post->created_at->diffForHumans() }}</span>
         </div>
         <!-- /.user-block -->

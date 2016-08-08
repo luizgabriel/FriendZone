@@ -21,7 +21,7 @@
               </a>
           </li>
             <li>
-                <a href="#">
+                <a href="{{ route('friends.index') }}">
                     <i class="fa fa-group"></i> <span>Amigos</span></i>
                 </a>
             </li>

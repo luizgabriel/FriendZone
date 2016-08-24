@@ -14,7 +14,9 @@
             <b>Friends</b> <a class="pull-right"> {{ $user->friends()->count() }}</a>
           </li>
         </ul>
-        <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+        @if(Auth::user()->id != $user->id)
+          <a href="{{route('friendrequest.store', $user)}}" class="btn btn-primary btn-block"><b>Adicionar como amigo</b></a>
+        @endif
       </div>
       <!-- /.box-body -->
     </div>

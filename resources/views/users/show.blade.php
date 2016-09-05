@@ -70,6 +70,10 @@
 
               <div class="tab-pane active" id="activity">
 
+                @if ($user->posts->count() == 0)
+                  <div class="help-block text-center"><b>{{ $user->name }}</b> não possui nenhuma postagem...</div>
+                @endif
+
                 @foreach($user->posts as $post)
                   @include('posts.item', compact('post'))
                 @endforeach

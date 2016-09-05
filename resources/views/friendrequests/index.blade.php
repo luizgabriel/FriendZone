@@ -1,7 +1,9 @@
 <li class="dropdown messages-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <i class="fa fa-group"></i>
-        <span class="label label-success">4</span>
+        @if (($_fr_count = Auth::user()->receivedFriendRequests()->count()) > 0)
+            <span class="label label-success">{{ $_fr_count }}</span>
+        @endif
     </a>
         <ul class="dropdown-menu">
             @if(Auth::user()->receivedFriendRequests()->count() == 0)
@@ -10,24 +12,11 @@
                 <li class="header">Solicitações de amizade</li>
             @endif
             <li>
-                <!-- inner menu: contains the actual data -->
                 <ul class="menu">
                     @foreach (Auth::user()->receivedFriendRequests as $friendrequest)
-                        <li><!-- start message -->
-                            <a href="#">
-	    						<div class="pull-left">
-	        						<img src="{{ url('img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
-	    						</div>
-	    						<h4>
-	        						{{ $friendrequest->sender->name }}
-	        						<small><i class="fa fa-clock-o"></i>{{ $friendrequest->created_at->diffForHumans() }}</small>
-	    						</h4>
-	    						<p>Enviou uma solicitação de amizade</p>
-	    						<button type="submit" class="btn btn-primary">Aceitar</button>
-	   							<button type="submit" class="btn btn-danger">Recusar</button>
-							</a> 
+                        <li>
+                            @include('friendrequests.show')
                         </li>
-                        <!-- end message -->
                     @endforeach
                 </ul>
             </li>

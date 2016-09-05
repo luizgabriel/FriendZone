@@ -12,17 +12,13 @@ class FriendRequestController extends Controller
 
     public function store(Request $request)
     {
-        $FriendRequest = new FriendRequest($request->all());
-        $FriendRequest->sender_id = $request->user()->id;
-        $FriendRequest->receiver_id = $request->user()->id;
-        $FriendRequest->save();
-
-        return redirect()->route('/profile/{$user()->id}');
+        $request->user()->sendFriendRequestTo($request->get('receiver_id'));
+        return redirect()->back();
     }
 
-    public function destroy(FriendRequest $FriendRequest)
+    public function destroy(FriendRequest $friendRequest)
     {
-        FriendRequest::destroy($FriendRequest);
+        FriendRequest::destroy($friendRequest->id);
         return redirect()->route('friendrequests.index');
     }
 }

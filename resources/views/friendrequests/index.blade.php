@@ -4,18 +4,22 @@
         <span class="label label-success">4</span>
     </a>
         <ul class="dropdown-menu">
-            <li class="header">Solicitações de amizade</li>
+            @if(Auth::user()->receivedFriendRequests()->count() == 0)
+                <li class="header">Você não possui solicitações de amizade</li>
+            @else
+                <li class="header">Solicitações de amizade</li>
+            @endif
             <li>
                 <!-- inner menu: contains the actual data -->
                 <ul class="menu">
-                    @foreach (Auth::user()->friendrequests() as $friendrequest)
+                    @foreach (Auth::user()->receivedFriendRequests as $friendrequest)
                         <li><!-- start message -->
                             <a href="#">
 	    						<div class="pull-left">
 	        						<img src="{{ url('img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
 	    						</div>
 	    						<h4>
-	        						{{ $friendrequest->user->name }}
+	        						{{ $friendrequest->sender->name }}
 	        						<small><i class="fa fa-clock-o"></i>{{ $friendrequest->created_at->diffForHumans() }}</small>
 	    						</h4>
 	    						<p>Enviou uma solicitação de amizade</p>

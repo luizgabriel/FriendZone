@@ -2,10 +2,11 @@
 
 namespace FriendZone;
 
+use FriendZone\FriendRequest;
+use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use FriendZone\Post;
 use FriendZone\Comment;
-use FriendZone\FriendRequest;
 
 class User extends Authenticatable
 {
@@ -42,8 +43,25 @@ class User extends Authenticatable
         return $this->belongsToMany(User::class, 'friendships', 'user_id', 'friend_id')->withTimestamps();
     }
 
-    public function friendrequests()
+    public function sentFriendRequests()
     {
-        return $this->hasMany(FriendRequest::class);
+        return $this->hasMany(FriendRequest::class, 'sender_id');
+    }
+
+    public function receivedFriendRequests()
+    {
+        return $this->hasMany(FriendRequest::class, 'receiver_id');
+    }
+
+    public function sendFriendRequestTo($user_id)
+    {
+        return $this->sentFriendRequests()->create([
+            'receiver_id' => $user_id
+        ]);
+    }
+    
+    public function hasAlreadySentFriendRequestTo($receiver_id)
+    {
+        return FriendRequest::find($this->id, $receiver_id) != null;
     }
 }

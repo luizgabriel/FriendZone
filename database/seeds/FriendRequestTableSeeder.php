@@ -12,9 +12,12 @@ class FriendRequestTableSeeder extends Seeder
      */
     public function run()
     {
-        FriendRequest::create([
-        	'sender_id' => 0,
-        	'receiver_id' => 0
-        ]);
+        foreach(\FriendZone\User::all() as $user) {
+            foreach (\FriendZone\User::all() as $friend) {
+                if ($user->id != $friend->id && random_int(0,5) == 1) {
+                    $user->sendFriendRequestTo($friend->id);
+                }
+            }
+        }
     }
 }

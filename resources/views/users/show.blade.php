@@ -15,7 +15,18 @@
           </li>
         </ul>
         @if(Auth::user()->id != $user->id)
-          <a href="{{route('friendrequest.store', $user)}}" class="btn btn-primary btn-block"><b>Adicionar como amigo</b></a>
+          @if (Auth::user()->hasAlreadySentFriendRequestTo($user->id))
+            <button class="btn btn-primary btn-block btn-lg" disabled>
+              <i class="fa fa-check"></i> Solicitação de Amizade Enviada
+            </button>
+          @else
+            <form method="post" action="{{route('friendrequest.store', $user)}}">
+              <input type="hidden" name="receiver_id" value="{{$user->id}}">
+              <button type="submit" class="btn btn-primary btn-block btn-lg">
+                <i class="fa fa-user-plus"></i> Enviar solicitação de amizade
+              </button>
+            </form>
+          @endif
         @endif
       </div>
       <!-- /.box-body -->

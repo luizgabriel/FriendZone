@@ -22,6 +22,6 @@ $router->group(['middleware' => 'auth'], function () use ($router) {
     $router->get('profile', 'UsersController@profile');
     $router->get('profile/{users}', ['as' => 'users.show', 'uses' => 'UsersController@show']);
     $router->put('profile/update', ['as' => 'users.update', 'uses' => 'UsersController@updateProfile']);
-    $router->put('profile/{users}/request', ['as' => 'friendrequest.store', 'uses' => 'FriendRequestController@store']);
+    $router->post('profile/{users}/request', ['as' => 'friendrequest.store', 'uses' => 'FriendRequestController@store']);
 
 });

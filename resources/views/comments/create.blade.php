@@ -6,6 +6,6 @@
     <!-- .img-push is used to add margin to elements next to floating images -->
     <div class="img-push">
         <input name="content" type="text" autocomplete="off" class="form-control input-sm"
-               placeholder="@lang('messages.comment.submit)">
+               placeholder="@lang('messages.comment.submit')">
     </div>
 </form>

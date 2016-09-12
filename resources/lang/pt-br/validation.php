@@ -108,6 +108,6 @@ return [
     'attributes' => [
         'name' => 'nome',
         'password' => 'senha',
-        'password_confirmation' => 'Confirmar de senha',
+        'password_confirmation' => 'confirmação de senha',
     ],
 ];

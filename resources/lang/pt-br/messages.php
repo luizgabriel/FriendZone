@@ -5,10 +5,11 @@ return [
     
     
     'login' => [
-      'submit' =>  'Entrar',
-      'forgot-pwd' => 'Esqueci minha senha',
-      'register' => 'Quero me registrar',
-      'remember-me' => 'Lembrar-se de mim',
+        'credentials' => 'Entre com suas credenciais',
+        'submit' =>  'Entrar',
+        'forgot-pwd' => 'Esqueci minha senha',
+        'register' => 'Quero me registrar',
+        'remember-me' => 'Lembrar-se de mim',
     ],
     
 ];

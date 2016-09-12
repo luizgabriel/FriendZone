@@ -12,4 +12,11 @@ return [
         'remember-me' => 'Lembrar-se de mim',
     ],
     
+    'register'  => [
+        'be-part' => 'Faça parte desta Rede Social!',
+        'submit' => 'Registrar',
+        'already_rgs' => 'Já possui uma conta? Volte.',
+        
+    ],
+    
 ];

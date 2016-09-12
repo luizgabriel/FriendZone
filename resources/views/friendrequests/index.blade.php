@@ -7,9 +7,9 @@
     </a>
         <ul class="dropdown-menu">
             @if(Auth::user()->receivedFriendRequests()->count() == 0)
-                <li class="header">Você não possui solicitações de amizade</li>
+                <li class="header">@lang('messages.friends.dont-have')</li>
             @else
-                <li class="header">Solicitações de amizade</li>
+                <li class="header">@lang('messages.friends.requests')</li>
             @endif
             <li>
                 <ul class="menu">

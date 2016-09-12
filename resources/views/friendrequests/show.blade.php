@@ -9,11 +9,17 @@
     <p>Enviou uma solicitação de amizade</p>
 
     <div class="btn-group pull-right">
-        <button type="submit" class="btn btn-sm btn-primary">
-            <i class="fa fa-check"></i> Aceitar
-        </button>
-        <button type="submit" class="btn btn-sm btn-danger">
-            <i class="fa fa-close"></i> Recusar
-        </button>
+        <form method="post" action="{{route('friendrequests.accept', $friendrequest)}}">
+            <input type="hidden" name="sender_id" value="{{$friendrequest->sender->id}}">
+            <button type="submit" class="btn btn-sm btn-primary">
+                Aceitar
+            </button>
+        
+        <form method="post" action="{{route('friendrequests.refuse', $friendrequest)}}">
+            <input type="hidden" name="sender_id" value="{{$friendrequest->sender->id}}">
+            <button type="submit" class="btn btn-sm btn-danger">
+                Recusar
+            </button>
+        </form>
     </div>
 </a>

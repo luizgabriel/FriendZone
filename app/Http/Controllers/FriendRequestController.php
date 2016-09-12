@@ -16,9 +16,20 @@ class FriendRequestController extends Controller
         return redirect()->back();
     }
 
-    public function destroy(FriendRequest $friendRequest)
+    public function destroy(Request $request)
     {
-        FriendRequest::destroy($friendRequest->id);
-        return redirect()->route('friendrequests.index');
+        \Auth::user()->receivedFriendRequests()->where('sender_id', $request->get('sender_id'))->delete();
+        return redirect()->back();
+    }
+
+    public function accept(Request $request)
+    {
+        $request->user()->accept($request->get('sender_id'));
+        return $this->destroy($request);
+    }
+
+    public function refuse(Request $request)
+    {
+        return $this->destroy($request);
     }
 }

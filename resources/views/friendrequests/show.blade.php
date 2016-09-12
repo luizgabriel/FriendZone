@@ -10,10 +10,10 @@
 
     <div class="btn-group pull-right">
         <button type="submit" class="btn btn-sm btn-primary">
-            <i class="fa fa-check"></i> ('messages.friends.accept')
+            <i class="fa fa-check"></i> @lang('messages.friends.accept')
         </button>
         <button type="submit" class="btn btn-sm btn-danger">
-            <i class="fa fa-close"></i> ('messages.friends.refuse')
+            <i class="fa fa-close"></i> @lang('messages.friends.refuse')
         </button>
     </div>
 </a>

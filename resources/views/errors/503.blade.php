@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Volto em breve.</title>
+        <title>@lang('messages.503')</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -40,7 +40,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Volto em breve.</div>
+                <div class="title">@lang('messages.503')</div>
             </div>
         </div>
     </body>

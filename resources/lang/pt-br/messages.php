@@ -30,7 +30,7 @@ return [
         'sent' => 'Enviou uma solicitação de amizade',
         'accept' => 'Aceitar',
         'refuse' => 'Recusar',
-        'friends-of' => 'Amigos de ',
+        'friends-of' => 'Amigos de :name',
     ],
     
 ];

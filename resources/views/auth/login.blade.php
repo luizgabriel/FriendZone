@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-xs-8">
                 <label>
-                    <input type="checkbox" class="icheck"/> Lembrar de mim
+                    <input type="checkbox" class="icheck"/> Lembrar-se de mim
                 </label>
             </div>
             <!-- /.col -->

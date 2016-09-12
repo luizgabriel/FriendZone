@@ -5,13 +5,13 @@
   <div class="row">
     <div class="col-md-12">
 
-      <p class="login-box-msg">Faça parte dessa Rede Social!</p>
+      <p class="login-box-msg">@lang('messages.register.be-part')</p>
 
       <form action="{{ url('auth/register') }}" method="post">
         <input type="hidden" value="{{ csrf_token() }}" name="_token"/>
 
         <div class="form-group has-feedback">
-          <input type="name" name="name" class="form-control" placeholder="Nome">
+          <input type="name" name="name" class="form-control" placeholder="{{ ucfirst(trans('validation.attributes.name')) }}">
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
 
@@ -21,16 +21,16 @@
         </div>
 
         <div class="form-group has-feedback">
-          <input type="password" name="password" class="form-control" placeholder="Senha">
+          <input type="password" name="password" class="form-control" placeholder="{{ ucfirst(trans('validation.attributes.password')) }}">
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
 
         <div class="form-group has-feedback">
-          <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmar Senha">
+          <input type="password" name="password_confirmation" class="form-control" placeholder=""{{ ucfirst(trans('validation.attributes.password_confirmation')) }}">
           <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-block btn-flat">Registrar</button>
+        <button type="submit" class="btn btn-primary btn-block btn-flat">@lang('messages.register.submit')</button>
       </form>
 
     </div>
@@ -39,5 +39,5 @@
 
 
 @section('extra')
-  <a href="{{ url('/') }}">Já possui uma conta? Volte.</a>
+  <a href="{{ url('/') }}">@lang('messages.register.already_rgs')</a>
 @endsection

@@ -105,6 +105,9 @@ return [
     |
     */
 
-    'attributes' => [],
-
+    'attributes' => [
+        'name' => 'nome',
+        'password' => 'senha',
+        'password_confirmation' => 'confirmação de senha',
+    ],
 ];

@@ -19,4 +19,14 @@ return [
         
     ],
     
+    'comment' => [
+        'submit' => 'Digite seu comentário e pressione ENTER',    
+        
+    ],
+    
+    'friends' => [
+        'dont-have' => 'Você não possui solicitações de amizade',
+        'requests' => 'Solicitações de amizade',
+    ],
+    
 ];

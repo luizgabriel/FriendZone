@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <p class="login-box-msg">@lang('messages.credentials')</p>
+    <p class="login-box-msg">@lang('messages.login.credentials')</p>
 
     <form action="{{ url('auth/login') }}" method="post">
         <input type="hidden" value="{{ csrf_token() }}" name="_token">
@@ -16,13 +16,13 @@
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-            <input type="password" name="password" class="form-control" placeholder="{{ ucfirst(trans('validation.atributes.password')) }}">
+            <input type="password" name="password" class="form-control" placeholder="{{ ucfirst(trans('validation.attributes.password')) }}">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
             <div class="col-xs-8">
                 <label>
-                    <input type="checkbox" class="icheck"/> @lang('messages.remember-me')
+                    <input type="checkbox" class="icheck"/> @lang('messages.login.remember-me')
                 </label>
             </div>
             <!-- /.col -->

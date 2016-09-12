@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group has-feedback">
-          <input type="password" name="password_confirmation" class="form-control" placeholder=""{{ ucfirst(trans('validation.attributes.password_confirmation')) }}">
+          <input type="password" name="password_confirmation" class="form-control" placeholder="{{ ucfirst(trans('validation.attributes.password_confirmation')) }}">
           <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
         </div>
 

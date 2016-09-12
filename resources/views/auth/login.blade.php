@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <p class="login-box-msg">Entre com suas credenciais</p>
+    <p class="login-box-msg">@lang('messages.credentials')</p>
 
     <form action="{{ url('auth/login') }}" method="post">
         <input type="hidden" value="{{ csrf_token() }}" name="_token">
@@ -16,25 +16,25 @@
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-            <input type="password" name="password" class="form-control" placeholder="Senha">
+            <input type="password" name="password" class="form-control" placeholder="{{ ucfirst(trans('validation.atributes.password')) }}">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
             <div class="col-xs-8">
                 <label>
-                    <input type="checkbox" class="icheck"/> Lembrar-se de mim
+                    <input type="checkbox" class="icheck"/> @lang('messages.remember-me')
                 </label>
             </div>
             <!-- /.col -->
             <div class="col-xs-4">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+                <button type="submit" class="btn btn-primary btn-block btn-flat">@lang('messages.login.submit')</button>
             </div>
             <!-- /.col -->
         </div>
     </form>
 
-    <a href="#">Esqueci minha senha</a><br>
-    <a href="/auth/register" class="text-center">Quero me cadastrar</a>
+    <a href="#">@lang('messages.login.forgot-pwd')</a><br>
+    <a href="/auth/register" class="text-center">@lang('messages.login.register')</a>
 
 @endsection
 

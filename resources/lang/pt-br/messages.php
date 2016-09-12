@@ -27,6 +27,9 @@ return [
     'friends' => [
         'dont-have' => 'Você não possui solicitações de amizade',
         'requests' => 'Solicitações de amizade',
+        'sent' => 'Enviou uma solicitação de amizade',
+        'accept' => 'Aceitar',
+        'refuse' => 'Recusar',
     ],
     
 ];

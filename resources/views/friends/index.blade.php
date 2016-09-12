@@ -3,7 +3,7 @@
 @section('content')
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Amigos de {{$user->name}}</h3>
+            <h3 class="box-title">@lang('messages.friends.friends-of'){{$user->name}}</h3>
             <div class="box-tools">
               <div class="input-group input-group-sm" style="width: 150px;">
                 <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">

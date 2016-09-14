@@ -30,7 +30,44 @@ return [
         'sent' => 'Enviou uma solicitação de amizade',
         'accept' => 'Aceitar',
         'refuse' => 'Recusar',
-        'friends-of' => 'Amigos de ',
+        'friends-of' => 'Amigos de :name',
+        'friends' => 'Amigos',
+        'send' => 'Enviar solicitação de amizade',
+        'sent' => 'Solicitação de amizade enviada!',
+        'see-all' => 'Ver todos os amigos',
+        'posts' => 'Postagens',
+        'doesnt-have-posts' => 'não possui nenhuma postagem...',
     ],
+    
+    'header' => [
+        'followers' => 'Seguidores',
+        'friends' => 'Amigos',
+        'profile' => 'Perfil',
+        'logout' => 'Sair',
+    ],
+    
+    'sidebar' => [
+        'postshall' => 'Hall de Postagens',
+    ],
+    
+    'posts' => [
+        'whatdoya' => 'O que você está pensando?',
+        'post' => 'Postar',
+        'morecomments' => 'Ver mais comentários',
+        'post-of' => 'Postagem de',
+    ],
+    
+    'users' => [
+        'name' => 'Nome',
+        'updt-rgster' => 'Atualizar dados',
+        'edit' => 'Editar Perfil',
+        'updt-yer' => 'Atualize as informações do seu perfil',
+        
+    ],
+
+    'general' => [
+        'version' => 'Versão',
+        'about' => 'Este projeto não possui fins lucrativos.',
+    ],    
     
 ];

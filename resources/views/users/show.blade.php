@@ -11,19 +11,19 @@
         <p class="text-muted text-center">Golf Player</p>
         <ul class="list-group list-group-unbordered">
           <li class="list-group-item">
-            <b>Friends</b> <a class="pull-right"> {{ $user->friends()->count() }}</a>
+            <b>@lang('messages.friends.friends')</b> <a class="pull-right"> {{ $user->friends()->count() }}</a>
           </li>
         </ul>
         @if(Auth::user()->id != $user->id)
           @if (Auth::user()->hasFriend($user->id) || Auth::user()->hasAlreadySentFriendRequestTo($user->id))
             <button class="btn btn-primary btn-block btn-lg" disabled>
-              <i class="fa fa-check"></i> Solicitação de Amizade Enviada
+              <i class="fa fa-check"></i> @lang('messages.friends.sent')
             </button>
           @else
             <form method="post" action="{{ route('friendrequest.store', $user) }}">
               <input type="hidden" name="receiver_id" value="{{$user->id}}">
               <button type="submit" class="btn btn-primary btn-block btn-lg">
-                <i class="fa fa-user-plus"></i> Enviar solicitação de amizade
+                <i class="fa fa-user-plus"></i> @lang('messages.friends.send')
               </button>
             </form>
           @endif
@@ -34,7 +34,7 @@
 
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h3 class="box-title">Amigos</h3>
+        <h3 class="box-title">@lang('messages.friends.friends')</h3>
       </div>
       <!-- /.box-header -->
       <div class="box-body no-padding">
@@ -51,7 +51,7 @@
       </div>
       <!-- /.box-body -->
       <div class="box-footer text-center">
-        <a href="/friends" class="uppercase">Ver todos os amigos</a>
+        <a href="/friends" class="uppercase">@lang('messages.friends.see-all')</a>
       </div>
       <!-- /.box-footer -->
     </div>
@@ -61,7 +61,7 @@
   <div class="col-md-8">
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-              <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="false">Postagens</a></li>
+              <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="false">@lang('messages.friends.posts')</a></li>
               @if (Auth::user()->id == $user->id)
                 <li><a href="#settings" data-toggle="tab" aria-expanded="true">Perfil</a></li>
               @endif
@@ -71,7 +71,7 @@
               <div class="tab-pane active" id="activity">
 
                 @if ($user->posts->count() == 0)
-                  <div class="help-block text-center"><b>{{ $user->name }}</b> não possui nenhuma postagem...</div>
+                  <div class="help-block text-center"><b>{{ $user->name }}</b> @lang('messages.friends.doesnt-have-posts')</div>
                 @endif
 
                 @foreach($user->posts as $post)
@@ -85,8 +85,8 @@
                 <div class="row">
                   <div class="col-md-12">
                     <h2 class="text-center">
-                      Editar Perfil<br/>
-                      <small>Atualize as informações do seu perfil</small>
+                      @lang('messages.users.edit')l<br/>
+                      <small>@lang('messages.users.updt-yer')</small>
                     </h2>
 
                     <div class="col-md-8 col-md-offset-2">

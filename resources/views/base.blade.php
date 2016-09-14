@@ -43,9 +43,9 @@
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Versão</b> 0.0.1
+      <b>@lang('messages.general.version)</b> 0.0.1
     </div>
-    <strong>Friend Zone</strong> | Este projeto não possui fins lucrativos.
+    <strong>Friend Zone</strong> | @lang('messages.general.about)
   </footer>
 
 </div>

@@ -35,7 +35,7 @@
 
     @if($post->comments->count() > 2)
     <div class="box-footer">
-        <a href="#" class="show-more-comments-btn">Ver mais comentários</a>
+        <a href="#" class="show-more-comments-btn">@lang('messages.posts.morecomments')</a>
         <div class="pull-right">
           <span class="comments-count">2</span> de <span class="comments-total">{{ $post->comments->count() }}</span>
         </div>

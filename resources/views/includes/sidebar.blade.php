@@ -17,12 +17,12 @@
         <ul class="sidebar-menu">
           <li>
               <a href="{{ route('posts.index') }}">
-                  <i class="fa fa-sticky-note"></i> <span>Hall de Postagens</span></i>
+                  <i class="fa fa-sticky-note"></i> <span>@lang('messages.sidebar.postshall')</span></i>
               </a>
           </li>
             <li>
                 <a href="{{ route('friends.index') }}">
-                    <i class="fa fa-group"></i> <span>Amigos</span></i>
+                    <i class="fa fa-group"></i> <span>@lang('messages.header.friends')</span></i>
                 </a>
             </li>
         </ul>

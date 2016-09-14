@@ -24,6 +24,9 @@ return [
     ],
     
     'friends' => [
+        'still-dont' => 'You don't have friends yet...',
+        'what-about' => 'What about adding some?',
+        'fd-since' => 'Friends since',
         'dont-have' => 'You don't have friend requests',
         'requests' => 'Freind requests',
         'sent' => 'You sent a friend request',

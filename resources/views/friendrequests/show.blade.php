@@ -8,18 +8,17 @@
     </h4>
     <p>Enviou uma solicitação de amizade</p>
 
-    <div class="btn-group pull-right">
-        <form method="post" action="{{route('friendrequests.accept', $friendrequest)}}">
-            <input type="hidden" name="sender_id" value="{{$friendrequest->sender->id}}">
-            <button type="submit" class="btn btn-sm btn-primary">
-                Aceitar
+
+    <form method="post" class="pull-right" action="{{route('friendrequests.answer', $friendrequest)}}">
+        <input type="hidden" name="sender_id" value="{{$friendrequest->sender->id}}">
+
+        <div class="btn-group">
+            <button type="submit" class="btn btn-xs btn-success" name="action" value="accept">
+                <i class="fa fa-check"></i> Aceitar
             </button>
-        
-        <form method="post" action="{{route('friendrequests.refuse', $friendrequest)}}">
-            <input type="hidden" name="sender_id" value="{{$friendrequest->sender->id}}">
-            <button type="submit" class="btn btn-sm btn-danger">
-                Recusar
+            <button type="submit" class="btn btn-xs btn-danger" name="action" value="refuse">
+                <i class="fa fa-times"></i> Recusar
             </button>
-        </form>
-    </div>
+        </div>
+    </form>
 </a>

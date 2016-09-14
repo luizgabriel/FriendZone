@@ -22,9 +22,7 @@ $router->group(['middleware' => 'auth'], function () use ($router) {
     $router->get('profile', 'UsersController@profile');
     $router->get('profile/{users}', ['as' => 'users.show', 'uses' => 'UsersController@show']);
     $router->put('profile/update', ['as' => 'users.update', 'uses' => 'UsersController@updateProfile']);
-    $router->post('friendrequest/accept', ['as' => 'friendrequests.accept', 'uses' => 'FriendRequestController@accept']);
-    $router->post('friendrequest/refuse', ['as' => 'friendrequests.refuse', 'uses' => 'FriendRequestController@refuse']);
-    $router->post('friendrequest/destroy', ['as' => 'friendrequests.destroy', 'uses' => 'FriendRequestController@destroy']);
+    $router->post('friendrequest/answer', ['as' => 'friendrequests.answer', 'uses' => 'FriendRequestController@answer']);
     $router->post('profile/{users}/request', ['as' => 'friendrequest.store', 'uses' => 'FriendRequestController@store']);
     
 });

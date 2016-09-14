@@ -12,12 +12,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        $pass = \Hash::make('fd2016');
         User::create([
             'name' => 'Administrator',
             'email' => 'demo@friendzone.com',
-            'password' => \Hash::make('fd2016'),
+            'password' => $pass,
         ]);
 
-        factory(User::class)->times(10)->create();
+        factory(User::class)->times(10)->create(['password' => $pass]);
     }
 }

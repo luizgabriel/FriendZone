@@ -64,4 +64,18 @@ class User extends Authenticatable
     {
         return FriendRequest::find($this->id, $receiver_id) != null;
     }
+
+    public function hasFriend($user_id)
+    {
+        return $this->friends()->find($user_id) != null;
+    }
+
+    /**
+     * @param int $sender_id
+     */
+    public function addFriend($sender_id)
+    {
+        if (!$this->hasFriend($sender_id))
+            $this->friends()->attach($sender_id);
+    }
 }

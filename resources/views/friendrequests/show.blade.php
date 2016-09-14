@@ -8,12 +8,16 @@
     </h4>
     <p>@lang('messages.friends.sent')</p>
 
-    <div class="btn-group pull-right">
-        <button type="submit" class="btn btn-sm btn-primary">
-            <i class="fa fa-check"></i> @lang('messages.friends.accept')
-        </button>
-        <button type="submit" class="btn btn-sm btn-danger">
-            <i class="fa fa-close"></i> @lang('messages.friends.refuse')
-        </button>
-    </div>
+    <form method="post" class="pull-right" action="{{ route('friendrequests.answer', $friendrequest) }}">
+        <input type="hidden" name="sender_id" value="{{ $friendrequest->sender->id }}">
+
+        <div class="btn-group">
+            <button type="submit" class="btn btn-xs btn-success" name="action" value="accept">
+                <i class="fa fa-check"></i> @lang('messages.friends.accept')
+            </button>
+            <button type="submit" class="btn btn-xs btn-danger" name="action" value="refuse">
+                <i class="fa fa-times"></i> @lang('messages.friends.refuse')
+            </button>
+        </div>
+    </form>
 </a>

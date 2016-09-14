@@ -18,6 +18,14 @@
           <div class="box-body">
 
               <div class="col-md-12">
+                @if ($friends->count() == 0)
+                  <h3 class="text-center">
+                    <span class="fa fa-frown-o text-blue" style="font-size: 40px"></span><br/>
+                    Você ainda não possui amigos... <br/>
+                    <small>Que tal adicionar alguns?</small>
+                  </h3>
+                @endif
+
                 @foreach ($friends as $friend)
                 <div class="friend-item">
                   <img alt="User Image" class="img-circle pull-left" src="{{ url('img/user3-128x128.jpg') }}" width="70px">

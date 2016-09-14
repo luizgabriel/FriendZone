@@ -15,12 +15,12 @@
           </li>
         </ul>
         @if(Auth::user()->id != $user->id)
-          @if (Auth::user()->hasAlreadySentFriendRequestTo($user->id))
+          @if (Auth::user()->hasFriend($user->id) || Auth::user()->hasAlreadySentFriendRequestTo($user->id))
             <button class="btn btn-primary btn-block btn-lg" disabled>
               <i class="fa fa-check"></i> Solicitação de Amizade Enviada
             </button>
           @else
-            <form method="post" action="{{route('friendrequest.store', $user)}}">
+            <form method="post" action="{{ route('friendrequest.store', $user) }}">
               <input type="hidden" name="receiver_id" value="{{$user->id}}">
               <button type="submit" class="btn btn-primary btn-block btn-lg">
                 <i class="fa fa-user-plus"></i> Enviar solicitação de amizade

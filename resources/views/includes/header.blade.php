@@ -42,13 +42,13 @@
                         <li class="user-body">
                             <div class="row">
                                 <div class="col-xs-4 text-center">
-                                    <a href="#"><b>0</b><br/> Seguidores</a>
+                                    <a href="#"><b>0</b><br/> @lang('messages.header.followers')</a>
                                 </div>
                                 <div class="col-xs-4 text-center">
                                     <a href="#"><b>0</b><br/> Vendas</a>
                                 </div>
                                 <div class="col-xs-4 text-center">
-                                    <a href="#"><b>0</b><br/> Amigos</a>
+                                    <a href="#"><b>0</b><br/> @lang('messages.header.friends')</a>
                                 </div>
                             </div>
                             <!-- /.row -->
@@ -56,10 +56,10 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="/profile" class="btn btn-default btn-flat">Perfil</a>
+                                <a href="/profile" class="btn btn-default btn-flat">@lang('messages.header.profile')</a>
                             </div>
                             <div class="pull-right">
-                                <a href="{{ url('auth/logout') }}" class="btn btn-default btn-flat">Sair</a>
+                                <a href="{{ url('auth/logout') }}" class="btn btn-default btn-flat">@lang('messages.header.logout')</a>
                             </div>
                         </li>
                     </ul>

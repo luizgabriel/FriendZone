@@ -14,13 +14,13 @@
                     <div class="col-md-10">
                         <div class="form-group">
                             <textarea name="content" class="form-control" rows="3"
-                                      placeholder="O que você está pensando?"></textarea>
+                                      placeholder="@lang('messages.posts.whatdoya')"></textarea>
                         </div>
                     </div>
 
                     <button type="submit" class="btn btn-info pull-right">
                       <i class="fa fa-pencil"></i>
-                      Postar
+                      @lang('messages.posts.post')
                     </button>
                 </div>
             </form>

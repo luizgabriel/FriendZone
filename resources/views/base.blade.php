@@ -43,9 +43,9 @@
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>@lang('messages.general.version)</b> 0.0.1
+      <b>@lang('messages.general.version')</b> 0.0.1
     </div>
-    <strong>Friend Zone</strong> | @lang('messages.general.about)
+    <strong>Friend Zone</strong> | @lang('messages.general.about')
   </footer>
 
 </div>

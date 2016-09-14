@@ -21,8 +21,8 @@
                 @if ($friends->count() == 0)
                   <h3 class="text-center">
                     <span class="fa fa-frown-o text-blue" style="font-size: 40px"></span><br/>
-                    Você ainda não possui amigos... <br/>
-                    <small>Que tal adicionar alguns?</small>
+                    @lang('messages.friends.still-dont') <br/>
+                    <small>@lang('messages.friends.what-about')</small>
                   </h3>
                 @endif
 
@@ -31,7 +31,7 @@
                   <img alt="User Image" class="img-circle pull-left" src="{{ url('img/user3-128x128.jpg') }}" width="70px">
                   <h4>
                     <a href="{{ route('users.show', $friend->id) }}">{{$friend->name}}</a><br/>
-                    <small>Seu amigo desde {{ $friend->pivot->created_at->format('d/m/Y') }}</small>
+                    <small>@lang('messages.friends.fd-since') {{ $friend->pivot->created_at->format('d/m/Y') }}</small>
                   </h4>
                 </div>
                 @endforeach

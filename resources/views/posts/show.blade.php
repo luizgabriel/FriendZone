@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('title', "Postagem de {$post->user->name}")
+@section('title', "@lang('messages.posts.post-of') {$post->user->name}")
 
 @section('content')
 

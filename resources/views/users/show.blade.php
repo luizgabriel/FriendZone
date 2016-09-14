@@ -85,8 +85,8 @@
                 <div class="row">
                   <div class="col-md-12">
                     <h2 class="text-center">
-                      @lang('messages.users.edit')l<br/>
-                      <small>@lang('messages.users.updt-yer')</small>
+                      @lang('messages.users.edit')<br/>
+                      <small>@lang('messages.users.update-yer')</small>
                     </h2>
 
                     <div class="col-md-8 col-md-offset-2">

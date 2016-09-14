@@ -24,21 +24,20 @@ return [
     ],
     
     'friends' => [
-        'still-dont' => 'You don't have friends yet...',
+        'still-dont' => 'You don\'t have friends yet...',
         'what-about' => 'What about adding some?',
         'fd-since' => 'Friends since',
-        'dont-have' => 'You don't have friend requests',
+        'dont-have' => 'You don\'t have friend requests',
         'requests' => 'Freind requests',
         'sent' => 'You sent a friend request',
         'accept' => 'Accept',
         'refuse' => 'Refuse',
-        'friends-of' => ':name's friends,
+        'friends-of' => ":name's friends",
         'friends' => 'Friends',
         'send' => 'Send a friend request',
-        'sent' => 'Friend request sent!',
         'see-all' => 'See all friends',
         'posts' => 'Posts',
-        'doesnt-have-posts' => 'doesn't have any post...'',
+        'doesnt-have-posts' => 'doesn\'t have any post...',
     ],
     
     'header' => [
@@ -61,10 +60,9 @@ return [
     
     'users' => [
         'name' => 'Name',
-        'updt-rgster' => 'Update register',
+        'update-register' => 'Update register',
         'edit' => 'Edit profile',
-        'updt-yer' => 'Update your profile information',
-        
+        'update-yer' => 'Update your profile information',
     ],
     'general' => [
         'version' => 'Version',

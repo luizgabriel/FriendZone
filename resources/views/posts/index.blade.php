@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('title', 'Hall de Postagens')
+@section('title', '@lang('messages.sidebar.postshall')')
 
 @section('content')
 

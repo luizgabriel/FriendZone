@@ -45,7 +45,7 @@ return [
         'followers' => 'Followers',
         'friends' => 'Friends',
         'profile' => 'Profile',
-        'logout' => 'Log out',
+        'logout' => 'Sign out',
     ],
     
     'sidebar' => [

@@ -13,12 +13,24 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
         <!-- Sidebar toggle button-->
+
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </a>
+        <div class="col-md-4 col-sm-6 col-xs-6">
+            <form action="#" method="get" class="header-form">
+                <div class="input-group pull-left">
+                    <input type="text" name="q" class="form-control" placeholder="Buscar" autocomplete="off">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+                </div>
+            </form>
+        </div>
 
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">

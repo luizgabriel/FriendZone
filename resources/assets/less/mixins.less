@@ -108,7 +108,7 @@
   @stop 100%);
   background: -o-linear-gradient(@stop,
   @start);
-  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", @stop, @start));
 }
 
 //Added 2.1.0
@@ -178,7 +178,7 @@
       box-shadow: none;
       background-color: lighten(@sidebar-dark-bg, 10%);
       border: 1px solid transparent;
-      height: 35px;
+      height: 30px;
       .transition(all @transition-speed @transition-fn);
     }
     input[type="text"] {
@@ -296,6 +296,63 @@
       }
       &:focus + .input-group-btn .btn {
         border-left-color: #fff;
+      }
+    }
+    .btn {
+      color: #999;
+      .border-radius(0, 2px, 0, 2px);
+    }
+  }
+  .header-form {
+    .border-radius(3px);
+    border: 1px solid darken(@brand-primary, 5%);
+    margin: 10px 0px;
+    input[type="text"],
+    .btn {
+      box-shadow: none;
+      background-color: darken(@brand-primary, 3%);
+      border: 1px solid transparent;
+      height: 30px;
+      .transition(all @transition-speed @transition-fn);
+    }
+    input[type="text"] {
+      color: #666;
+      .border-radius(2px, 0, 2px, 0);
+      &:focus,
+      &:focus + .input-group-btn .btn {
+        background-color: #fff;
+        color: #666;
+      }
+      &:focus + .input-group-btn .btn {
+        border-left-color: #666;
+        &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+          color:    #666;
+        }
+        &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+          color:    #666;
+          opacity:  1;
+        }
+        &::-moz-placeholder { /* Mozilla Firefox 19+ */
+          color:    #666;
+          opacity:  1;
+        }
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+          color:    #666;
+        }
+      }
+      &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:    #fff;
+      }
+      &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    #fff;
+        opacity:  1;
+      }
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    #fff;
+        opacity:  1;
+      }
+      &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color:    #fff;
       }
     }
     .btn {

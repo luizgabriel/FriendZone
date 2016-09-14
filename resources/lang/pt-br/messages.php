@@ -25,6 +25,9 @@ return [
     ],
     
     'friends' => [
+        'still-dont' => 'Você não possui amigos ainda...',
+        'what-about' => 'Que tal adicionar alguns?',
+        'fd-since' => 'Amigos desde',
         'dont-have' => 'Você não possui solicitações de amizade',
         'requests' => 'Solicitações de amizade',
         'sent' => 'Enviou uma solicitação de amizade',

@@ -1,6 +1,6 @@
 <div class="box-comment" data-id="{{ $comment->id }}">
     <!-- User image -->
-    <img class="img-circle img-sm" src="{{ url('img/user3-128x128.jpg') }}"
+    <img class="img-circle img-sm" src="{{ $comment->user->photo_url }}"
          alt="User Image">
 
     <div class="comment-text">

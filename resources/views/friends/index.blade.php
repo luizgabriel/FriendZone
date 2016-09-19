@@ -28,7 +28,7 @@
 
                 @foreach ($friends as $friend)
                 <div class="friend-item">
-                  <img alt="User Image" class="img-circle pull-left" src="{{ url('img/user3-128x128.jpg') }}" width="70px">
+                  <img alt="User Image" class="img-circle pull-left" src="{{  $friend->photo_url }}" width="70px">
                   <h4>
                     <a href="{{ route('users.show', $friend->id) }}">{{$friend->name}}</a><br/>
                     <small>@lang('messages.friends.fd-since') {{ $friend->pivot->created_at->format('d/m/Y') }}</small>

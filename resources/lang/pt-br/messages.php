@@ -61,6 +61,7 @@ return [
     'users' => [
         'name' => 'Nome',
         'update-register' => 'Atualizar dados',
+        'hobby-description' => 'Algo que você gosta de fazer.',
         'edit' => 'Editar Perfil',
         'update-yer' => 'Atualize as informações do seu perfil',
     ],

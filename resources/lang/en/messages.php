@@ -59,8 +59,8 @@ return [
     ],
     
     'users' => [
-        'name' => 'Name',
         'update-register' => 'Update register',
+        'hobby-description' => 'Something that you like to do',
         'edit' => 'Edit profile',
         'update-yer' => 'Update your profile information',
     ],

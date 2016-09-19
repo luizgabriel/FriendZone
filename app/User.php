@@ -2,11 +2,13 @@
 
 namespace FriendZone;
 
+use Cloudinary\Uploader;
 use FriendZone\FriendRequest;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use FriendZone\Post;
 use FriendZone\Comment;
+use Symfony\Component\HttpFoundation\File\File;
 
 class User extends Authenticatable
 {
@@ -16,7 +18,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'photo', 'hobby'
+    ];
+
+    protected $casts = [
+        'photo' => 'array',
     ];
 
     /**
@@ -77,5 +83,49 @@ class User extends Authenticatable
     {
         if (!$this->hasFriend($sender_id))
             $this->friends()->attach($sender_id);
+    }
+
+    public function setPhotoAttribute($value)
+    {
+        if ($value instanceof File) {
+            try {
+                if(!empty($this->attributes['photo']))
+                    Uploader::destroy($this->photo['public_id']);
+
+                $this->attributes['photo'] = json_encode(Uploader::upload($value));
+            } catch (\Exception $e) { }
+        } else {
+            $this->attributes['photo'] = $value;
+        }
+    }
+
+    public function getPhotoUrlAttribute()
+    {
+        if (empty($this->photo))
+            return $this->getRandomProfilePicture();
+        else
+            return $this->photo['url'];
+    }
+
+    private static $photos = ['no_profile.png', 'no_profile2.png', 'no_profile3.png', 'no_profile4.png'];
+    /**
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
+     */
+    private function getRandomProfilePicture()
+    {
+        $session_key = "profile_pic.{$this->id}";
+        if (session($session_key) == null)
+            $this->chooseRandomProfileImage();
+
+        return session($session_key);
+    }
+
+    private function chooseRandomProfileImage()
+    {
+        $index = array_rand(static::$photos);
+        $picture = static::$photos[$index];
+        $url = url("img/{$picture}");
+
+        session()->put("profile_pic.{$this->id}", $url);
     }
 }

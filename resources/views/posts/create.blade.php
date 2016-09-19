@@ -7,7 +7,7 @@
 
                 <div class="box-body">
                     <div class="col-md-2 hidden-xs">
-                        <img src="{{ url('img/user3-128x128.jpg') }}" class="img-circle" alt="User Image"
+                        <img src="{{ Auth::user()->photo_url }}" class="img-circle" alt="User Image"
                              width="100%"/>
                     </div>
 

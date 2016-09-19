@@ -6,7 +6,7 @@
     <!-- Profile Image -->
     <div class="box box-primary">
       <div class="box-body box-profile">
-        <img class="profile-user-img img-responsive img-circle" src="{{ url('img/user4-128x128.jpg') }}" alt="User profile picture">
+        <img class="profile-user-img img-responsive img-circle" src="{{  Auth::user()->photo_url  }}" alt="User profile picture">
         <h3 class="profile-username text-center">{{$user->name}}</h3>
         <p class="text-muted text-center">Golf Player</p>
         <ul class="list-group list-group-unbordered">
@@ -41,7 +41,7 @@
         <ul class="users-list clearfix">
           @foreach($user->friends()->take(8)->get() as $friend)
             <li>
-              <img src="{{ url('img/user1-128x128.jpg') }}" alt="User Image">
+              <img src="{{  $friend->photo_url }}" alt="User Image">
               <a class="users-list-name" href="{{ route('users.show', $friend->id) }}">{{ $friend->name }}</a>
               <span class="users-list-date">{{ $friend->pivot->created_at->diffForHumans() }}</span>
             </li>
@@ -89,7 +89,7 @@
                       <small>@lang('messages.users.update-yer')</small>
                     </h2>
 
-                    <div class="col-md-8 col-md-offset-2">
+                    <div class="col-md-10 col-md-offset-1">
                       @include('users.edit')
                     </div>
                   </div>

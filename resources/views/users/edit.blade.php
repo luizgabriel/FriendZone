@@ -3,10 +3,10 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
     <div class="row" style="margin-top: 10px; margin-bottom: 10px">
-        <div class="col-md-2 col-md-offset-0 col-xs-6 col-xs-offset-2">
+        <div class="col-md-2 col-sm-2 col-md-offset-0 col-xs-6 col-xs-offset-2">
             <img class="img-circle" src="{{ $user->photo_url }}" width="100%" alt=""/>
         </div>
-        <div class="col-md-10 col-xs-12">
+        <div class="col-md-10 col-sm-10 col-xs-12">
             <div class="form-group">
                 <label for="photo">Foto</label>
                 <input type="file" name="photo"/>

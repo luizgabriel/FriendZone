@@ -10,6 +10,17 @@ use FriendZone\User;
 
 class UsersController extends Controller
 {
+    public function search(Request $request)
+    {
+        $query = $request->get('q');
+        $users = User::where('name', 'like', "%{$query}%")->take(100)->get(['name', 'hobby', 'photo']);
+        $users = $users->map(function (User $user) {
+            return $user->toSearchFormat();
+        });
+
+        return response()->json(['data' => $users]);
+    }
+
 	public function profile(Authenticatable $user)
 	{
         return $this->show($user);

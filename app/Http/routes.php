@@ -19,6 +19,8 @@ $router->group(['middleware' => 'auth'], function () use ($router) {
     $router->resource('comments', 'CommentsController', ['only' => ['store','destroy']]);  //'destroy','update'
     $router->resource('posts.comments', 'CommentsController', ['only' => ['index']]);
 
+    $router->get('users/search', 'UsersController@search');
+
     $router->get('profile', 'UsersController@profile');
     $router->get('profile/{users}', ['as' => 'users.show', 'uses' => 'UsersController@show']);
     $router->put('profile/update', ['as' => 'users.update', 'uses' => 'UsersController@updateProfile']);

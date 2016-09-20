@@ -3,7 +3,6 @@
 return [
     '503' => 'Volto logo',
     
-    
     'login' => [
         'credentials' => 'Entre com suas credenciais',
         'submit' =>  'Entrar',
@@ -25,9 +24,11 @@ return [
     ],
     
     'friends' => [
+        'still-dont' => 'Você não possui amigos ainda...',
+        'what-about' => 'Que tal adicionar alguns?',
+        'fd-since' => 'Amigos desde',
         'dont-have' => 'Você não possui solicitações de amizade',
         'requests' => 'Solicitações de amizade',
-        'sent' => 'Enviou uma solicitação de amizade',
         'accept' => 'Aceitar',
         'refuse' => 'Recusar',
         'friends-of' => 'Amigos de :name',
@@ -59,10 +60,10 @@ return [
     
     'users' => [
         'name' => 'Nome',
-        'updt-rgster' => 'Atualizar dados',
+        'update-register' => 'Atualizar dados',
+        'hobby-description' => 'Algo que você gosta de fazer.',
         'edit' => 'Editar Perfil',
-        'updt-yer' => 'Atualize as informações do seu perfil',
-        
+        'update-yer' => 'Atualize as informações do seu perfil',
     ],
 
     'general' => [

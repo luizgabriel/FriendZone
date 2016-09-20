@@ -7,6 +7,7 @@ var packages = {
     ionicons: 'node_modules/ionicons/dist/',
     icheck: 'node_modules/icheck/',
     bootstrap3dialog: 'node_modules/bootstrap3-dialog/dist/',
+    typeahead: 'node_modules/typeahead.js/dist/'
 };
 
 elixir(function(mix) {
@@ -24,7 +25,11 @@ elixir(function(mix) {
         .copy(packages.icheck + 'skins/flat/blue.css', 'public/css/icheck.css')
         .copy(packages.bootstrap3dialog + 'css/bootstrap-dialog.min.css', 'public/css/bootstrap-dialog.min.css')
         .copy(packages.bootstrap3dialog + 'js/bootstrap-dialog.min.js', 'public/js/bootstrap-dialog.min.js')
+        .copy(packages.typeahead + 'bloodhound.min.js', 'public/js/bloodhound.js')
+        .copy(packages.typeahead + 'typeahead.bundle.min.js', 'public/js/typeahead.bundle.js')
+        .copy(packages.typeahead + 'typeahead.jquery.min.js', 'public/js/typeahead.js')
 
+        .coffee('search.coffee', 'public/js/search.js')
         .scripts('app.js', 'public/js/app.js')
         .less('AdminLTE.less', 'public/css/app.css')
 

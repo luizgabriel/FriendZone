@@ -13,7 +13,7 @@ class AddHobbyToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('hobby');
+            $table->string('hobby')->nullable();
         });
     }
 

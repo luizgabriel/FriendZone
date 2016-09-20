@@ -23,7 +23,7 @@
     <div class="form-group">
         <label for="name" class="col-sm-2 control-label">Hobby</label>
         <div class="col-md-10">
-            <input type="text" name="name" class="form-control" value="{{ $user->hobby }}" placeholder="@lang('messages.user.hobby-description')">
+            <input type="text" name="name" class="form-control" value="{{ $user->hobby }}" placeholder="@lang('messages.users.hobby-description')">
         </div>
     </div>
     <div class="form-group">

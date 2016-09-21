@@ -63,7 +63,7 @@
             <ul class="nav nav-tabs">
               <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="false">@lang('messages.friends.posts')</a></li>
               @if (Auth::user()->id == $user->id)
-                <li><a href="#settings" data-toggle="tab" aria-expanded="true">Perfil</a></li>
+                <li><a href="#settings" data-toggle="tab" aria-expanded="true">@lang('messages.header.profile')</a></li>
               @endif
             </ul>
             <div class="tab-content">

@@ -51,12 +51,12 @@ class User extends Authenticatable
 
     public function sentFriendRequests()
     {
-        return $this->belongsToMany(User::class, 'friend_requests', 'sender_id', 'receiver_id')->withTimestamps();
+        return $this->belongsToMany(User::class, 'friend_requests', 'sender_id', 'receiver_id');
     }
 
     public function receivedFriendRequests()
     {
-        return $this->belongsToMany(User::class, 'friend_requests', 'receiver_id', 'sender_id')->withTimestamps();
+        return $this->belongsToMany(User::class, 'friend_requests', 'receiver_id', 'sender_id');
     }
 
     public function sendFriendRequestTo($user_id)

@@ -14,6 +14,7 @@ class CreateFriendrequestsTable extends Migration
     {
         Schema::create('friend_requests', function (Blueprint $table) {
 
+            $table->increments('id');
             $table->integer('sender_id')->unsigned()->index();
             $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('receiver_id')->unsigned()->index();

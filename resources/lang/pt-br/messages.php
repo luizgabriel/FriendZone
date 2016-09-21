@@ -1,5 +1,4 @@
 <?php
-
 return [
     '503' => 'Volto logo',
     
@@ -19,7 +18,7 @@ return [
     ],
     
     'comment' => [
-        'submit' => 'Digite seu comentário e pressione ENTER',    
+        'submit' => 'Digite seu comentário e pressione ENTER',
         
     ],
     
@@ -56,6 +55,7 @@ return [
         'post' => 'Postar',
         'morecomments' => 'Ver mais comentários',
         'post-of' => 'Postagem de',
+        'outof' => 'de',
     ],
     
     'users' => [
@@ -70,5 +70,4 @@ return [
         'version' => 'Versão',
         'about' => 'Este projeto não possui fins lucrativos.',
     ],    
-    
 ];

@@ -26,7 +26,7 @@ class FriendRequestController extends Controller
 
     private function destroy(Request $request)
     {
-        \Auth::user()->receivedFriendRequests()->deattach($request->get('sender_id'));
+        \Auth::user()->receivedFriendRequests()->detach($request->get('sender_id'));
         return redirect()->back();
     }
 }

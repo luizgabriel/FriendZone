@@ -22,7 +22,7 @@ class UsersController extends Controller
 
     public function updateProfile(Request $request, Authenticatable $user)
     {
-        $user->update($request->only(['name']));
+        $user->update($request->only(['name', 'hobby']));
 
         return redirect()->to('profile');
     }

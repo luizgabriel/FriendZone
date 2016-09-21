@@ -37,6 +37,7 @@
                             <p>
                                 {{ Auth::user()->name }}
                             </p>
+                            <p class="text-muted text-center">{{Auth::user()->hobby}}</p>
                         </li>
                         <!-- Menu Body -->
                         <!-- Menu Footer-->

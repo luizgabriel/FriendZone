@@ -61,9 +61,7 @@ class User extends Authenticatable
 
     public function sendFriendRequestTo($user_id)
     {
-        return $this->sentFriendRequests()->create([
-            'receiver_id' => $user_id
-        ]);
+        return $this->sentFriendRequests()->attach($user_id);
     }
     
     public function hasAlreadySentFriendRequestTo($receiver_id)

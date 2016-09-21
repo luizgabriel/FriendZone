@@ -4,7 +4,6 @@
     </div>
     <h4>
         {{ $requester->name }}
-        <small><i class="fa fa-clock-o"></i>{{ $requester->pivot->created_at->format('d/m/Y') }}</small>
     </h4>
     <p>@lang('messages.friends.sent')</p>
 

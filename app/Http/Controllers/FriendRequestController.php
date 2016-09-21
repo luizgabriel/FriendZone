@@ -19,7 +19,7 @@ class FriendRequestController extends Controller
 
     public function answer(Request $request)
     {
-        $sender = User::findOrFail($request->get('sender_id'))
+        $sender = User::findOrFail($request->get('sender_id'));
         if ($request->get('action') == 'accept')
             $request->user()->addFriend($sender);
 

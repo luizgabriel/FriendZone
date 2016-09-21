@@ -35,9 +35,9 @@
                             <img src="{{ Auth::user()->photo_url }}" class="img-circle" alt="User Image">
 
                             <p>
-                                {{ Auth::user()->name }}
+                                {{ Auth::user()->name }} <br/>
+                                <small>{{ Auth::user()->hobby }}</small>
                             </p>
-                            <p class="text-muted text-center">{{Auth::user()->hobby}}</p>
                         </li>
                         <!-- Menu Body -->
                         <!-- Menu Footer-->

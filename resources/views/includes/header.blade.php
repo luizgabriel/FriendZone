@@ -39,14 +39,6 @@
                             </p>
                         </li>
                         <!-- Menu Body -->
-                        <li class="user-body">
-                            <div class="row">
-                                <div class="col-xs-4 col-xs-offset-4 text-center">
-                                    <a href="#"><b>{{ Auth::user()->friends()->count() }}</b><br/> @lang('messages.header.friends')</a>
-                                </div>
-                            </div>
-                            <!-- /.row -->
-                        </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">

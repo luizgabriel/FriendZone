@@ -8,7 +8,7 @@
       <div class="box-body box-profile">
         <img class="profile-user-img img-responsive img-circle" src="{{  Auth::user()->photo_url  }}" alt="User profile picture">
         <h3 class="profile-username text-center">{{$user->name}}</h3>
-        <p class="text-muted text-center">Golf Player</p>
+        <p class="text-muted text-center">{{$user->hobby}}</p>
         <ul class="list-group list-group-unbordered">
           <li class="list-group-item">
             <b>@lang('messages.friends.friends')</b> <a class="pull-right"> {{ $user->friends()->count() }}</a>

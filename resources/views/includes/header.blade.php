@@ -42,13 +42,7 @@
                         <li class="user-body">
                             <div class="row">
                                 <div class="col-xs-4 text-center">
-                                    <a href="#"><b>0</b><br/> @lang('messages.header.followers')</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#"><b>0</b><br/> Vendas</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#"><b>0</b><br/> @lang('messages.header.friends')</a>
+                                    <a href="#"><b>{{ Auth::user()->friends()->count() }}</b><br/> @lang('messages.header.friends')</a>
                                 </div>
                             </div>
                             <!-- /.row -->

@@ -9,6 +9,10 @@
 
       <form action="{{ url('auth/register') }}" method="post">
         <input type="hidden" value="{{ csrf_token() }}" name="_token"/>
+        <div class="form-group">
+          <label for="photo">Foto</label>
+          <input type="file" name="photo"/>
+        </div>
 
         <div class="form-group has-feedback">
           <input type="name" name="name" class="form-control" placeholder="{{ ucfirst(trans('validation.attributes.name')) }}">

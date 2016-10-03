@@ -76,10 +76,12 @@ class User extends Authenticatable
     /**
      * @param int $sender_id
      */
-    public function addFriend($sender_id)
+    public function addFriend(User $sender)
     {
-        if (!$this->hasFriend($sender_id))
-            $this->friends()->attach($sender_id);
+        if (!$this->hasFriend($sender->id))
+            $this->friends()->attach($sender->id);
+        if (!$sender->hasFriend($this->id))
+            $sender->friends()->attach($this->id);
     }
 
     public function setPhotoAttribute($value)

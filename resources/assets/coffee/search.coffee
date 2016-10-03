@@ -1,16 +1,16 @@
-searchInput = $('#searchInput')
-engine = new Bloodhound(
-  remote:
-    url: '/users/search'
-    prepare: prepareRequest
-    transform: (response) -> response.data
-  queryTokenizer: Bloodhound.tokenizers.whitespace
-  datumTokenizer: Bloodhound.tokenizers.whitespace
-)
-
-engine.initialize()
-searchInput.typeahead(typeahead: [null, { source: engine.ttAdapter() }])
-
 prepareRequest = (query, settings) ->
   settings.method = 'get'
-  settings.data = q: searchInput.val()
+  settings.data = q: query
+  console.log(settings)
+
+  searchInput = $('#searchInput')
+  users = new Bloodhound(
+    remote:
+      url: '/users/search'
+      prepare: prepareRequest
+      transform: (response) -> response.data
+    queryTokenizer: Bloodhound.tokenizers.whitespace
+    datumTokenizer: Bloodhound.tokenizers.whitespace
+  )
+
+  searchInput.typeahead(null, { source: users })

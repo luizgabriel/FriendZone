@@ -37,7 +37,7 @@
     <div class="box-footer">
         <a href="#" class="show-more-comments-btn">@lang('messages.posts.morecomments')</a>
         <div class="pull-right">
-          <span class="comments-count">2</span> de <span class="comments-total">{{ $post->comments->count() }}</span>
+          <span class="comments-count">2</span> @lang('messages.posts.outof') <span class="comments-total">{{ $post->comments->count() }}</span>
         </div>
     </div>
     @endif

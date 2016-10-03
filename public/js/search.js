@@ -1,35 +1,28 @@
 (function() {
-  var engine, prepareRequest, searchInput;
-
-  searchInput = $('#searchInput');
-
-  engine = new Bloodhound({
-    remote: {
-      url: '/users/search',
-      prepare: prepareRequest,
-      transform: function(response) {
-        return response.data;
-      }
-    },
-    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    datumTokenizer: Bloodhound.tokenizers.whitespace
-  });
-
-  engine.initialize();
-
-  searchInput.typeahead({
-    typeahead: [
-      null, {
-        source: engine.ttAdapter()
-      }
-    ]
-  });
+  var prepareRequest;
 
   prepareRequest = function(query, settings) {
+    var searchInput, users;
     settings.method = 'get';
-    return settings.data = {
-      q: searchInput.val()
+    settings.data = {
+      q: query
     };
+    console.log(settings);
+    searchInput = $('#searchInput');
+    users = new Bloodhound({
+      remote: {
+        url: '/users/search',
+        prepare: prepareRequest,
+        transform: function(response) {
+          return response.data;
+        }
+      },
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+      datumTokenizer: Bloodhound.tokenizers.whitespace
+    });
+    return searchInput.typeahead(null, {
+      source: users
+    });
   };
 
 }).call(this);

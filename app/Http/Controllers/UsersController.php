@@ -33,8 +33,9 @@ class UsersController extends Controller
 
     public function updateProfile(Request $request, Authenticatable $user)
     {
-        $user->update($request->only(['name']));
-
+        $user->update($request->only(['name', 'hobby']));
+        if ($request->hasFile('photo'))
+        	$user->update(['photo' => $request->file('photo')]);
         return redirect()->to('profile');
     }
 }

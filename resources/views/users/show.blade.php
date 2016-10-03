@@ -8,7 +8,7 @@
       <div class="box-body box-profile">
         <img class="profile-user-img img-responsive img-circle" src="{{  Auth::user()->photo_url  }}" alt="User profile picture">
         <h3 class="profile-username text-center">{{$user->name}}</h3>
-        <p class="text-muted text-center">Golf Player</p>
+        <p class="text-muted text-center">{{$user->hobby}}</p>
         <ul class="list-group list-group-unbordered">
           <li class="list-group-item">
             <b>@lang('messages.friends.friends')</b> <a class="pull-right"> {{ $user->friends()->count() }}</a>
@@ -63,7 +63,7 @@
             <ul class="nav nav-tabs">
               <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="false">@lang('messages.friends.posts')</a></li>
               @if (Auth::user()->id == $user->id)
-                <li><a href="#settings" data-toggle="tab" aria-expanded="true">Perfil</a></li>
+                <li><a href="#settings" data-toggle="tab" aria-expanded="true">@lang('messages.header.profile')</a></li>
               @endif
             </ul>
             <div class="tab-content">

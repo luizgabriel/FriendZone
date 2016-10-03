@@ -983,7 +983,7 @@ a:focus {
   width: 20px;
 }
 .navbar-nav > .messages-menu > .dropdown-menu {
-  width: 380px;
+  width: 320px;
   height: 500px;
 }
 .navbar-nav > .messages-menu > .dropdown-menu > li .menu {
@@ -4338,8 +4338,8 @@ select.input-group.input-group-sm .twitter-typeahead .tt-hint {
 }
 textarea.input-group.input-group-sm .twitter-typeahead .tt-input,
 textarea.input-group.input-group-sm .twitter-typeahead .tt-hint,
-select[multiple] .input-group.input-group-sm .twitter-typeahead .tt-input,
-select[multiple] .input-group.input-group-sm .twitter-typeahead .tt-hint {
+select[multiple].input-group.input-group-sm .twitter-typeahead .tt-input,
+select[multiple].input-group.input-group-sm .twitter-typeahead .tt-hint {
   height: auto;
 }
 .input-group.input-group-sm .twitter-typeahead:not(:first-child):not(:last-child) .tt-input,
@@ -4365,7 +4365,7 @@ select[multiple] .input-group.input-group-sm .twitter-typeahead .tt-hint {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
-  line-height: 1.3333333;
+  line-height: 1.33;
   border-radius: 6px;
 }
 select.input-group.input-group-lg .twitter-typeahead .tt-input,
@@ -4375,8 +4375,8 @@ select.input-group.input-group-lg .twitter-typeahead .tt-hint {
 }
 textarea.input-group.input-group-lg .twitter-typeahead .tt-input,
 textarea.input-group.input-group-lg .twitter-typeahead .tt-hint,
-select[multiple] .input-group.input-group-lg .twitter-typeahead .tt-input,
-select[multiple] .input-group.input-group-lg .twitter-typeahead .tt-hint {
+select[multiple].input-group.input-group-lg .twitter-typeahead .tt-input,
+select[multiple].input-group.input-group-lg .twitter-typeahead .tt-hint {
   height: auto;
 }
 .input-group.input-group-lg .twitter-typeahead:not(:first-child):not(:last-child) .tt-input,
@@ -4405,7 +4405,7 @@ select[multiple] .input-group.input-group-lg .twitter-typeahead .tt-hint {
   display: table-cell !important;
 }
 .twitter-typeahead .tt-hint {
-  color: #777777;
+  color: #999999;
 }
 .twitter-typeahead .tt-input {
   z-index: 2;
@@ -4428,8 +4428,9 @@ fieldset[disabled] .twitter-typeahead .tt-input {
   margin: 2px 0 0;
   list-style: none;
   font-size: 14px;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;

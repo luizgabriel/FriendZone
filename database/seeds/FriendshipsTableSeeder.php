@@ -15,7 +15,7 @@ class FriendshipsTableSeeder extends Seeder
         foreach(\FriendZone\User::all() as $user) {
         	foreach (\FriendZone\User::all() as $friend) {
                 if ($user->id != $friend->id && random_int(0,1) == 1) {
-                	$user->friends()->attach($friend->id);
+                	$user->addFriend($friend);
                 }
             }
         }

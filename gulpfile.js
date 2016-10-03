@@ -25,9 +25,7 @@ elixir(function(mix) {
         .copy(packages.icheck + 'skins/flat/blue.css', 'public/css/icheck.css')
         .copy(packages.bootstrap3dialog + 'css/bootstrap-dialog.min.css', 'public/css/bootstrap-dialog.min.css')
         .copy(packages.bootstrap3dialog + 'js/bootstrap-dialog.min.js', 'public/js/bootstrap-dialog.min.js')
-        .copy(packages.typeahead + 'bloodhound.min.js', 'public/js/bloodhound.js')
-        .copy(packages.typeahead + 'typeahead.bundle.min.js', 'public/js/typeahead.bundle.js')
-        .copy(packages.typeahead + 'typeahead.jquery.min.js', 'public/js/typeahead.js')
+        .copy(packages.typeahead, 'public/js/')
 
         .coffee('search.coffee', 'public/js/search.js')
         .scripts('app.js', 'public/js/app.js')

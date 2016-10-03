@@ -20,7 +20,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </a>
-        <div class="col-md-4 col-sm-6 col-xs-6">
+        <!--<div class="col-md-4 col-sm-6 col-xs-6">
             <form action="#" method="get" class="header-form">
                 <div class="input-group pull-left">
                     <input type="text" id="searchInput" class="form-control" placeholder="Buscar" autocomplete="off">
@@ -30,7 +30,7 @@
                     </span>
                 </div>
             </form>
-        </div>
+        </div>-->
 
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
@@ -47,24 +47,11 @@
                             <img src="{{ Auth::user()->photo_url }}" class="img-circle" alt="User Image">
 
                             <p>
-                                {{ Auth::user()->name }}
+                                {{ Auth::user()->name }} <br/>
+                                <small>{{ Auth::user()->hobby }}</small>
                             </p>
                         </li>
                         <!-- Menu Body -->
-                        <li class="user-body">
-                            <div class="row">
-                                <div class="col-xs-4 text-center">
-                                    <a href="#"><b>0</b><br/> @lang('messages.header.followers')</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#"><b>0</b><br/> Vendas</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#"><b>0</b><br/> @lang('messages.header.friends')</a>
-                                </div>
-                            </div>
-                            <!-- /.row -->
-                        </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">

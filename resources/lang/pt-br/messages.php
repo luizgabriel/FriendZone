@@ -1,5 +1,4 @@
 <?php
-
 return [
     '503' => 'Volto logo',
     
@@ -19,7 +18,7 @@ return [
     ],
     
     'comment' => [
-        'submit' => 'Digite seu comentário e pressione ENTER',    
+        'submit' => 'Digite seu comentário e pressione ENTER',
         
     ],
     
@@ -35,6 +34,7 @@ return [
         'friends' => 'Amigos',
         'send' => 'Enviar solicitação de amizade',
         'sent' => 'Solicitação de amizade enviada!',
+        'wants-to-be-friend' => 'Quer ser seu amigo',
         'see-all' => 'Ver todos os amigos',
         'posts' => 'Postagens',
         'doesnt-have-posts' => 'não possui nenhuma postagem...',
@@ -56,6 +56,7 @@ return [
         'post' => 'Postar',
         'morecomments' => 'Ver mais comentários',
         'post-of' => 'Postagem de',
+        'outof' => 'de',
     ],
     
     'users' => [
@@ -70,5 +71,4 @@ return [
         'version' => 'Versão',
         'about' => 'Este projeto não possui fins lucrativos.',
     ],    
-    
 ];

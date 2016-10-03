@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Request;
 use FriendZone\Http\Requests;
 use FriendZone\FriendRequest;
+use FriendZone\User;
 
 class FriendRequestController extends Controller
 {
@@ -16,17 +17,17 @@ class FriendRequestController extends Controller
         return redirect()->back();
     }
 
-    public function answer(Request $request)
+    public function answer(User $requester, Request $request)
     {
         if ($request->get('action') == 'accept')
-            $request->user()->addFriend($request->get('sender_id'));
+            $request->user()->addFriend($requester);
 
-        return $this->destroy($request);
+        return $this->destroy($requester);
     }
 
-    private function destroy(Request $request)
+    private function destroy(User $requester)
     {
-        \Auth::user()->receivedFriendRequests()->where('sender_id', $request->get('sender_id'))->delete();
+        \Auth::user()->receivedFriendRequests()->detach($requester->id);
         return redirect()->back();
     }
 }

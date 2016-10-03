@@ -6,12 +6,12 @@
               <input type="hidden" value="{{ csrf_token() }}" name="_token"/>
 
                 <div class="box-body">
-                    <div class="col-md-2 hidden-xs">
+                    <div class="col-md-2 col-sm-2 hidden-xs">
                         <img src="{{ Auth::user()->photo_url }}" class="img-circle" alt="User Image"
                              width="100%"/>
                     </div>
 
-                    <div class="col-md-10">
+                    <div class="col-md-10 col-sm-10">
                         <div class="form-group">
                             <textarea name="content" class="form-control" rows="3"
                                       placeholder="@lang('messages.posts.whatdoya')"></textarea>

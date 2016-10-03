@@ -41,7 +41,7 @@
         <ul class="users-list clearfix">
           @foreach($user->friends()->take(8)->get() as $friend)
             <li>
-              <img src="{{  $friend->photo_url }}" alt="User Image">
+              <img src="{{ $friend->photo_url }}" alt="User Image">
               <a class="users-list-name" href="{{ route('users.show', $friend->id) }}">{{ $friend->name }}</a>
               <span class="users-list-date">{{ $friend->pivot->created_at->diffForHumans() }}</span>
             </li>

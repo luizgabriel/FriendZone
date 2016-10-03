@@ -3,14 +3,11 @@
         <img src="{{ url('img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
     </div>
     <h4>
-        {{ $friendrequest->sender->name }}
-        <small><i class="fa fa-clock-o"></i>{{ $friendrequest->created_at->diffForHumans() }}</small>
+        {{ $friend->name }}
     </h4>
     <p>@lang('messages.friends.sent')</p>
 
-    <form method="post" class="pull-right" action="{{ route('friendrequests.answer', $friendrequest) }}">
-        <input type="hidden" name="sender_id" value="{{ $friendrequest->sender->id }}">
-
+    <form method="post" class="pull-right" action="{{ route('friendrequests.answer', $friend->id) }}">
         <div class="btn-group">
             <button type="submit" class="btn btn-xs btn-success" name="action" value="accept">
                 <i class="fa fa-check"></i> @lang('messages.friends.accept')

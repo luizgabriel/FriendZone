@@ -3,7 +3,6 @@
 namespace FriendZone;
 
 use Cloudinary\Uploader;
-use FriendZone\FriendRequest;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use FriendZone\Post;
@@ -23,10 +22,6 @@ class User extends Authenticatable
 
     protected $casts = [
         'photo' => 'array',
-    ];
-
-    protected $appends = [
-        'photo_url'
     ];
 
     /**
@@ -55,12 +50,12 @@ class User extends Authenticatable
 
     public function sentFriendRequests()
     {
-        return $this->belongsToMany(FriendRequest::class, 'friend_requests', 'sender_id', 'receiver_id');
+        return $this->belongsToMany(User::class, 'friend_requests', 'sender_id', 'receiver_id');
     }
 
     public function receivedFriendRequests()
     {
-        return $this->belongsToMany(FriendRequest::class, 'friend_requests', 'receiver_id', 'sender_id');
+        return $this->belongsToMany(User::class, 'friend_requests', 'receiver_id', 'sender_id');
     }
 
     public function sendFriendRequestTo($user_id)
@@ -70,7 +65,7 @@ class User extends Authenticatable
     
     public function hasAlreadySentFriendRequestTo($receiver_id)
     {
-        return FriendRequest::find($this->id, $receiver_id) != null;
+        return $this->sentFriendRequests()->where('receiver_id', $receiver_id)->count() > 0;
     }
 
     public function hasFriend($user_id)
@@ -129,14 +124,5 @@ class User extends Authenticatable
         $url = url("img/{$picture}");
 
         session()->put("profile_pic.{$this->id}", $url);
-    }
-
-    public function toSearchFormat()
-    {
-        return [
-            'name' => $this->name,
-            'photo_url' => $this->photo_url,
-            'hobby' => $this->hobby,
-        ];
     }
 }

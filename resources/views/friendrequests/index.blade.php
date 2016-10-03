@@ -13,7 +13,7 @@
             @endif
             <li>
                 <ul class="menu">
-                    @foreach (Auth::user()->receivedFriendRequests as $friendrequest)
+                    @foreach (Auth::user()->receivedFriendRequests as $friend)
                         <li>
                             @include('friendrequests.show')
                         </li>

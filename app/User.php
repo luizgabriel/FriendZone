@@ -55,19 +55,17 @@ class User extends Authenticatable
 
     public function sentFriendRequests()
     {
-        return $this->hasMany(FriendRequest::class, 'sender_id');
+        return $this->belongsToMany(FriendRequest::class, 'friend_requests', 'sender_id', 'receiver_id');
     }
 
     public function receivedFriendRequests()
     {
-        return $this->hasMany(FriendRequest::class, 'receiver_id');
+        return $this->belongsToMany(FriendRequest::class, 'friend_requests', 'receiver_id', 'sender_id');
     }
 
     public function sendFriendRequestTo($user_id)
     {
-        return $this->sentFriendRequests()->create([
-            'receiver_id' => $user_id
-        ]);
+        return $this->sentFriendRequests()->attach($user_id);
     }
     
     public function hasAlreadySentFriendRequestTo($receiver_id)

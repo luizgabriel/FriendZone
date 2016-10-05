@@ -7,7 +7,7 @@
 
       <p class="login-box-msg">@lang('messages.register.be-part')</p>
 
-      <form action="{{ url('auth/register') }}" method="post">
+      <form action="{{ url('auth/register') }}" method="post" enctype="multipart/form-data">
         <input type="hidden" value="{{ csrf_token() }}" name="_token"/>
         <div class="form-group">
           <label for="photo">Foto</label>

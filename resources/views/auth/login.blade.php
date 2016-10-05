@@ -33,7 +33,7 @@
         </div>
     </form>
 
-    <a href="#">@lang('messages.login.forgot-pwd')</a><br>
+    <!--<a href="#">@lang('messages.login.forgot-pwd')</a><br>-->
     <a href="/auth/register" class="text-center">@lang('messages.login.register')</a>
 
 @endsection
